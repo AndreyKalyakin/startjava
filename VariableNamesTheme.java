@@ -119,13 +119,25 @@ public class VariableNamesTheme {
         System.out.println();
         System.out.println("3. АББРЕВИАТУРЫ");
         // Старый universally unique identifier
-        
+        String oldUuid = "oldUuid";
+        System.out.println("Старый universally unique identifier = " + oldUuid);
         // Производитель оперативной памяти
+        String ramManufacturer = "ramManufacturer";
+        System.out.println("Производитель оперативной памяти = " + ramManufacturer);
         // Емкость жесткого диска
+        String hddCapacity = "hddCapacity";
+        System.out.println("Емкость жесткого диска = " + hddCapacity);
         // Протокол передачи гипертекста
+        String http = "http";
+        System.out.println("Протокол передачи гипертекста = " + http);
         // Сокращенный uniform resource locator
+        String shortUrl = "shortUrl";
+        System.out.println("Сокращенный uniform resource locator = " + shortUrl);
         // Новый идентификатор клиента
+        String newClientId = "newClientId";
+        System.out.println("Новый идентификатор клиента = " + newClientId);
         // American standard code for information interchange
-
+        String ascii = "ascii";
+        System.out.println("American standard code for information interchange = " + ascii);
     }
 }
