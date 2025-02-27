@@ -103,16 +103,16 @@ public class VariablesTheme {
         // С помощью арифметических операций
         System.out.println("С помощью арифметических операций");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
-        a = a + b;
+        a += b;
         b = a - b;
-        a = a - b;
+        a -= b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
         // С помощью побитовой операции ^
         System.out.println("С помощью побитовой операции ^");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
-        a = a ^ b;
+        a ^= b;
         b = a ^ b;
-        a = a ^ b;
+        a ^= b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
         System.out.println("\n6. ВЫВОД СИМВОЛОВ И ИХ КОДОВ");
