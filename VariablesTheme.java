@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("1. ВЫВОД ХАРАКТЕРИСТИК КОМПЬЮТЕРА");
@@ -21,11 +24,9 @@ public class VariablesTheme {
         System.out.println("Это ноутбук? " + isLaptop);
 
         System.out.println("\n2. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
-        // Стоимость ручки
+        // Назначение переменных
         float penPrice = 105.5f;
-        // Стоимость книги
         float bookPrice = 235.83f;
-        // Скидка
         float discount = 0.11f;
         // Общая стоимость товаров без скидки
         float totalPrice = penPrice + bookPrice;
@@ -141,5 +142,45 @@ public class VariablesTheme {
                 sym1 + sym3 + sym3 + sym3 + sym3 + sym1 + sym2 + sym3 + sym3 + sym2);
 
         System.out.println("\n8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА");
+        int totalNumber = 123;
+        int hundreds = totalNumber / 100;
+        int tens = totalNumber / 10 % 10;
+        int units = totalNumber % 10;
+        int sumDischarge = hundreds + tens + units;
+        int productDischarge = hundreds * tens * units;
+        System.out.println("Число " + totalNumber + " содержит:\n" + 
+                "  сотен - " + hundreds + "\n" +
+                "  десятков - " + tens + "\n" +
+                "  единиц - " + units + "\n" +
+                "Сумма разрядов = " + sumDischarge + "\n" +
+                "Произведение разрядов = " + productDischarge);
+
+        System.out.println("\n9. ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ");
+        int totalSeconds = 86399;
+        int hours = totalSeconds / 3600;
+        int minutes = totalSeconds / 60 % 60;
+        int seconds = totalSeconds % 60;
+        System.out.println(hours + ":" + minutes + ":" + seconds);
+
+        System.out.println("\n10. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
+        BigDecimal penPrice2 = new BigDecimal(105.5);
+        BigDecimal bookPrice2 = new BigDecimal(235.83);
+        BigDecimal discount2 = new BigDecimal(0.11);
+        // Общая стоимость товаров без скидки
+        BigDecimal totalPrice2 = penPrice2.add(bookPrice2);
+        totalPrice2 = totalPrice2.setScale(2, RoundingMode.DOWN); 
+        System.out.println("Общая стоимость товаров без скидки = " + totalPrice2);
+        // Общая сумма скидки
+        BigDecimal penDiscount2 = penPrice2.multiply(discount2);
+        BigDecimal bookDiscount2 = bookPrice2.multiply(discount2);
+        BigDecimal sumDiscount2 = penDiscount2.add(bookDiscount2);
+        sumDiscount2 = sumDiscount2.setScale(2, RoundingMode.DOWN);
+        System.out.println("Общая сумма скидки = " + sumDiscount2);
+        // Общая стоимость товаров со скидкой
+        BigDecimal penDiscountPrice2 = penPrice2.subtract(penDiscount2);
+        BigDecimal bookDiscountPrice2 = bookPrice2.subtract(bookDiscount2);
+        BigDecimal totalDiscountPrice2 = penDiscountPrice2.add(bookDiscountPrice2);
+        totalDiscountPrice2 = totalDiscountPrice2.setScale(2, RoundingMode.DOWN);
+        System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice2);
     }
 }
