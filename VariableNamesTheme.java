@@ -86,8 +86,7 @@ public class VariableNamesTheme {
         int numInEachLine = 28;
         System.out.println("Количество чисел в каждой строке = " + numInEachLine);
 
-        System.out.println();
-        System.out.println("2. BOOLEAN-ПЕРЕМЕННЫЕ");
+        System.out.println("\n2. BOOLEAN-ПЕРЕМЕННЫЕ");
         // Cотни равны?
         boolean equalHundreds = true;
         System.out.println("Сотни равны? " + equalHundreds);
@@ -116,8 +115,7 @@ public class VariableNamesTheme {
         boolean isUniqueNumbers = false;
         System.out.println("Имеются уникальные строки? " + isUniqueNumbers);
 
-        System.out.println();
-        System.out.println("3. АББРЕВИАТУРЫ");
+        System.out.println("\n3. АББРЕВИАТУРЫ");
         // Старый universally unique identifier
         String oldUuid = "oldUuid";
         System.out.println("Старый universally unique identifier = " + oldUuid);
