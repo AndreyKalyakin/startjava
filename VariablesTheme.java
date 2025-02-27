@@ -28,6 +28,6 @@ public class VariablesTheme {
             System.out.println("Это ноутбук? " + isLaptop);
 
             System.out.println();
-            System.out.println("2. ");
+            System.out.println("2. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
         }
 }
