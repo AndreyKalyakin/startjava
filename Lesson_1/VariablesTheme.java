@@ -49,10 +49,10 @@ public class VariablesTheme {
         System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice);
 
         System.out.println("\n3. ВЫВОД СЛОВА JAVA");
-        System.out.println("    J    a  v     v  a");
-        System.out.println("    J   a a  v   v  a a");
-        System.out.println(" J  J  aaaaa  V V  aaaaa");
-        System.out.println("  JJ  a     a  V  a     a");
+        System.out.println("    J    a  v     v  a\n" +
+                "    J   a a  v   v  a a\n" +
+                " J  J  aaaaa  V V  aaaaa\n" +
+                "  JJ  a     a  V  a     a");
 
         System.out.println("\n4. ВЫВОД MIN И MAX ЗНАЧЕНИЙ ЦЕЛЫХ ЧИСЛОВЫХ ТИПОВ");
 
@@ -151,10 +151,10 @@ public class VariablesTheme {
         char sym5 = ')';
 
         // Вывод ASCII-АРТ ДЮКА
-        System.out.println("    " + sym1 + sym2 + "\n" +
-                "   " + sym1 + "  " + sym2 + "\n" +
-                "  " + sym1 + sym3 + sym4 + " " + sym5 + sym2 + "\n" +
-                " " + sym1 + "      " + sym2 + "\n" +
+        System.out.println("    " + sym1 + sym2 +
+                "\n   " + sym1 + "  " + sym2 +
+                "\n  " + sym1 + sym3 + sym4 + " " + sym5 + sym2 +
+                "\n " + sym1 + "      " + sym2 + "\n" +
                 sym1 + sym3 + sym3 + sym3 + sym3 + sym1 + sym2 + sym3 + sym3 + sym2);
 
         System.out.println("\n8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА");
@@ -165,11 +165,11 @@ public class VariablesTheme {
         int sumDischarge = hundreds + tens + units;
         int productDischarge = hundreds * tens * units;
         System.out.println("Число " + totalNumber + " содержит:\n" + 
-                "  сотен - " + hundreds + "\n" +
-                "  десятков - " + tens + "\n" +
-                "  единиц - " + units + "\n" +
-                "Сумма разрядов = " + sumDischarge + "\n" +
-                "Произведение разрядов = " + productDischarge);
+                "  сотен - " + hundreds +
+                "\n  десятков - " + tens +
+                "\n  единиц - " + units +
+                "\nСумма разрядов = " + sumDischarge +
+                "\nПроизведение разрядов = " + productDischarge);
 
         System.out.println("\n9. ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ");
         int totalSeconds = 86399;
