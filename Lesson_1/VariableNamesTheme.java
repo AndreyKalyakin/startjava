@@ -107,8 +107,8 @@ public class VariableNamesTheme {
         System.out.println("Счетчик = " + counter);
 
         // Путь до файла
-        String filePatch = "C:/Java/StartJava";
-        System.out.println("Путь до файла = " + filePatch);
+        String filePath = "C:/Java/StartJava";
+        System.out.println("Путь до файла = " + filePath);
 
         // Количество чисел в каждой строке
         int numInEachLine = 28;
@@ -155,31 +155,31 @@ public class VariableNamesTheme {
         System.out.println("\n3. АББРЕВИАТУРЫ");
 
         // Старый universally unique identifier
-        String oldUuid = "oldUuid";
+        String oldUuid = "e63abfdf-84d8-4bb9-86a0-455487f90d97";
         System.out.println("Старый universally unique identifier = " + oldUuid);
 
         // Производитель оперативной памяти
-        String ramManufacturer = "ramManufacturer";
+        String ramManufacturer = "Kingston";
         System.out.println("Производитель оперативной памяти = " + ramManufacturer);
 
         // Емкость жесткого диска
-        String hddCapacity = "hddCapacity";
+        String hddCapacity = "500Gb";
         System.out.println("Емкость жесткого диска = " + hddCapacity);
 
         // Протокол передачи гипертекста
-        String http = "http";
+        String http = "http://";
         System.out.println("Протокол передачи гипертекста = " + http);
 
         // Сокращенный uniform resource locator
-        String shortUrl = "shortUrl";
+        String shortUrl = "https://shorturl.at/H3Gdc";
         System.out.println("Сокращенный uniform resource locator = " + shortUrl);
 
         // Новый идентификатор клиента
-        String newClientId = "newClientId";
+        String newClientId = "4e0139e2-9ab7-4601-94ce-033589157328";
         System.out.println("Новый идентификатор клиента = " + newClientId);
 
         // American standard code for information interchange
-        String ascii = "ascii";
+        String ascii = "+_@$%^&";
         System.out.println("American standard code for information interchange = " + ascii);
     }
 }
