@@ -83,7 +83,7 @@ public class VariablesTheme {
         System.out.println("\n5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ");
         int a = 2;
         int b = 5;
-        int tmp = a;
+        final int tmp = a;
         System.out.println("С помощью третьей переменной");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
         a = b;
