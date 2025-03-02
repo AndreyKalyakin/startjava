@@ -5,19 +5,16 @@ public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("1. ВЫВОД ХАРАКТЕРИСТИК КОМПЬЮТЕРА");
 
-        // Назначение переменных
-        byte coreNumbers = 8;
-        short osArchitecture = 64;
+        byte coreNumber = 8;
+        short osArch = 64;
         int ramCapacity = 16384;
         long hddCapacity = 511210237952L;
         float screenDiagonal = 15.6f;
         double cpuFrequency = 3.20;
         char firstCharOs = 'W';
         boolean isLaptop = true;
-
-        // Вывод характеристик
-        System.out.println("Количество ядер: " + coreNumbers);
-        System.out.println("Разрядность системы: x" + osArchitecture);
+        System.out.println("Количество ядер: " + coreNumber);
+        System.out.println("Разрядность системы: x" + osArch);
         System.out.println("Объем оперативной памяти: " + ramCapacity + " Mb");
         System.out.println("Объем жесткого диска: " + hddCapacity + " byte");
         System.out.println("Размер экрана: " + screenDiagonal + " in");
@@ -26,26 +23,14 @@ public class VariablesTheme {
         System.out.println("Это ноутбук? " + isLaptop);
 
         System.out.println("\n2. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
-
-        // Назначение переменных
         float penPrice = 105.5f;
         float bookPrice = 235.83f;
         float discount = 0.11f;
-
-        // Общая стоимость товаров без скидки
-        float totalPrice = penPrice + bookPrice;
-        System.out.println("Общая стоимость товаров без скидки = " + totalPrice);
-
-        // Общая сумма скидки
-        float penDiscount = penPrice * discount;
-        float bookDiscount = bookPrice * discount;
-        float sumDiscount = penDiscount + bookDiscount;
-        System.out.println("Общая сумма скидки = " + sumDiscount);
-
-        // Общая стоимость товаров со скидкой
-        float penDiscountPrice = penPrice - penDiscount;
-        float bookDiscountPrice = bookPrice - bookDiscount;
-        float totalDiscountPrice = penDiscountPrice + bookDiscountPrice;
+        float basePrice = penPrice + bookPrice;
+        System.out.println("Общая стоимость товаров без скидки = " + basePrice);
+        float totalDiscount = basePrice * discount;
+        System.out.println("Общая сумма скидки = " + totalDiscount);
+        float totalDiscountPrice = basePrice - totalDiscount;
         System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice);
 
         System.out.println("\n3. ВЫВОД СЛОВА JAVA");
@@ -55,8 +40,6 @@ public class VariablesTheme {
                 "  JJ  a     a  V  a     a");
 
         System.out.println("\n4. ВЫВОД MIN И MAX ЗНАЧЕНИЙ ЦЕЛЫХ ЧИСЛОВЫХ ТИПОВ");
-
-        // Вывод byte
         byte maxByte = 127;
         System.out.println("Вывод типа: byte");
         System.out.println("Первоначальное значение = " + maxByte);
@@ -65,7 +48,6 @@ public class VariablesTheme {
         maxByte--;
         System.out.println("Значение byte после декремента на единицу = " + maxByte);
 
-        // Вывод short
         short maxShort = 32767;
         System.out.println("Вывод типа: short");
         System.out.println("Первоначальное значение = " + maxShort);
@@ -74,7 +56,6 @@ public class VariablesTheme {
         maxShort--;
         System.out.println("Значение short после декремента на единицу = " + maxShort);
 
-        // Вывод int
         int maxInt = 2147483647;
         System.out.println("Вывод типа: int");
         System.out.println("Первоначальное значение = " + maxInt);
@@ -83,7 +64,6 @@ public class VariablesTheme {
         maxInt--;
         System.out.println("Значение short после декремента на единицу = " + maxInt);
 
-        // Вывод long
         long maxLong = 9223372036854775807L;
         System.out.println("Вывод типа: long");
         System.out.println("Первоначальное значение = " + maxLong);
@@ -92,7 +72,6 @@ public class VariablesTheme {
         maxLong--;
         System.out.println("Значение short после декремента на единицу = " + maxLong);
 
-        // Вывод char
         char maxChar = 65535;
         System.out.println("Вывод типа: char");
         System.out.println("Первоначальное значение = " + (int) maxChar);
@@ -104,16 +83,13 @@ public class VariablesTheme {
         System.out.println("\n5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ");
         int a = 2;
         int b = 5;
-
-        // С помощью третьей переменной
+        int tmp = a;
         System.out.println("С помощью третьей переменной");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
-        int c = a;
         a = b;
-        b = c;
+        b = tmp;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
-        // С помощью арифметических операций
         System.out.println("С помощью арифметических операций");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
         a += b;
@@ -121,84 +97,70 @@ public class VariablesTheme {
         a -= b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
-        // С помощью побитовой операции ^
         System.out.println("С помощью побитовой операции ^");
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
         a ^= b;
-        b = a ^ b;
+        b ^= a;
         a ^= b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
         System.out.println("\n6. ВЫВОД СИМВОЛОВ И ИХ КОДОВ");
-        char asciiCode36 = '$';
-        char asciiCode42 = '*';
-        char asciiCode64 = '@';
-        char asciiCode94 = '^';
-        char asciiCode126 = '~';
-
-        // Вывод значений Код - Символ
-        System.out.println("Код: " + (int) asciiCode36 + " Символ: " + asciiCode36);
-        System.out.println("Код: " + (int) asciiCode42 + " Символ: " + asciiCode42);
-        System.out.println("Код: " + (int) asciiCode64 + " Символ: " + asciiCode64);
-        System.out.println("Код: " + (int) asciiCode94 + " Символ: " + asciiCode94);
-        System.out.println("Код: " + (int) asciiCode126 + " Символ: " + asciiCode126);
+        char dollar = '$';
+        char asterisk = '*';
+        char atSign = '@';
+        char caret = '^';
+        char tilde = '~';
+        System.out.println("Код: " + (int) dollar + " Символ: " + dollar);
+        System.out.println("Код: " + (int) asterisk + " Символ: " + asterisk);
+        System.out.println("Код: " + (int) atSign + " Символ: " + atSign);
+        System.out.println("Код: " + (int) caret + " Символ: " + caret);
+        System.out.println("Код: " + (int) tilde + " Символ: " + tilde);
 
         System.out.println("\n7. ВЫВОД В КОНСОЛЬ ASCII-АРТ ДЮКА");
-        char sym1 = '/';
-        char sym2 = '\\';
-        char sym3 = '_';
-        char sym4 = '(';
-        char sym5 = ')';
-
-        // Вывод ASCII-АРТ ДЮКА
-        System.out.println("    " + sym1 + sym2 +
-                "\n   " + sym1 + "  " + sym2 +
-                "\n  " + sym1 + sym3 + sym4 + " " + sym5 + sym2 +
-                "\n " + sym1 + "      " + sym2 + "\n" +
-                sym1 + sym3 + sym3 + sym3 + sym3 + sym1 + sym2 + sym3 + sym3 + sym2);
+        char slash = '/';
+        char verticalBar = '\\';
+        char underscore = '_';
+        char leftParenthesis = '(';
+        char rightParenthesis = ')';
+        System.out.println("    " + slash + verticalBar +
+                "\n   " + slash + "  " + verticalBar +
+                "\n  " + slash + underscore + leftParenthesis + " " + rightParenthesis + verticalBar +
+                "\n " + slash + "      " + verticalBar +
+                "\n" + slash + underscore + underscore + underscore + underscore +
+                slash + verticalBar + underscore + underscore + verticalBar);
 
         System.out.println("\n8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА");
-        int totalNumber = 123;
-        int hundreds = totalNumber / 100;
-        int tens = totalNumber / 10 % 10;
-        int units = totalNumber % 10;
-        int sumDischarge = hundreds + tens + units;
-        int productDischarge = hundreds * tens * units;
-        System.out.println("Число " + totalNumber + " содержит:\n" + 
+        int originalNumber = 123;
+        int hundreds = originalNumber / 100;
+        int tens = originalNumber / 10 % 10;
+        int ones = originalNumber % 10;
+        int dischargeSum = hundreds + tens + ones;
+        int dischargeProduct = hundreds * tens * ones;
+        System.out.println("Число " + originalNumber + " содержит:\n" + 
                 "  сотен - " + hundreds +
                 "\n  десятков - " + tens +
-                "\n  единиц - " + units +
-                "\nСумма разрядов = " + sumDischarge +
-                "\nПроизведение разрядов = " + productDischarge);
+                "\n  единиц - " + ones +
+                "\nСумма разрядов = " + dischargeSum +
+                "\nПроизведение разрядов = " + dischargeProduct);
 
         System.out.println("\n9. ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ");
         int totalSeconds = 86399;
-        int hours = totalSeconds / 3600;
-        int minutes = totalSeconds / 60 % 60;
-        int seconds = totalSeconds % 60;
-        System.out.println(hours + ":" + minutes + ":" + seconds);
+        int hh = totalSeconds / 3600;
+        int mm = totalSeconds / 60 % 60;
+        int ss = totalSeconds % 60;
+        System.out.println(hh + ":" + mm + ":" + ss);
 
         System.out.println("\n10. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
         BigDecimal penPrice2 = new BigDecimal(105.5);
         BigDecimal bookPrice2 = new BigDecimal(235.83);
         BigDecimal discount2 = new BigDecimal(0.11);
-
-        // Общая стоимость товаров без скидки
-        BigDecimal totalPrice2 = penPrice2.add(bookPrice2);
-        totalPrice2 = totalPrice2.setScale(2, RoundingMode.DOWN); 
-        System.out.println("Общая стоимость товаров без скидки = " + totalPrice2);
-
-        // Общая сумма скидки
-        BigDecimal penDiscount2 = penPrice2.multiply(discount2);
-        BigDecimal bookDiscount2 = bookPrice2.multiply(discount2);
-        BigDecimal sumDiscount2 = penDiscount2.add(bookDiscount2);
-        sumDiscount2 = sumDiscount2.setScale(2, RoundingMode.DOWN);
-        System.out.println("Общая сумма скидки = " + sumDiscount2);
-
-        // Общая стоимость товаров со скидкой
-        BigDecimal penDiscountPrice2 = penPrice2.subtract(penDiscount2);
-        BigDecimal bookDiscountPrice2 = bookPrice2.subtract(bookDiscount2);
-        BigDecimal totalDiscountPrice2 = penDiscountPrice2.add(bookDiscountPrice2);
+        BigDecimal basePrice2 = penPrice2.add(bookPrice2);
+        basePrice2 = basePrice2.setScale(2, RoundingMode.DOWN); 
+        System.out.println("Общая стоимость товаров без скидки = " + basePrice2);
+        BigDecimal totalDiscount2 = basePrice2.multiply(discount2);
+        totalDiscount2 = totalDiscount2.setScale(2, RoundingMode.DOWN);
+        System.out.println("Общая сумма скидки = " + totalDiscount2);
+        BigDecimal totalDiscountPrice2 = basePrice2.subtract(totalDiscount2);
         totalDiscountPrice2 = totalDiscountPrice2.setScale(2, RoundingMode.DOWN);
         System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice2);
     }
