@@ -83,22 +83,21 @@ public class VariablesTheme {
         System.out.println("\n5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ");
         int a = 2;
         int b = 5;
-        final int tmp = a;
-        System.out.println("С помощью третьей переменной");
+        int tmp = a;
         System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
-        a = b;
+
+        System.out.println("С помощью третьей переменной");
         b = tmp;
+        a = b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
         System.out.println("С помощью арифметических операций");
-        System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
         a += b;
         b = a - b;
         a -= b;
         System.out.println("Значения после обмена: a = " + a + ", b = " + b);
 
         System.out.println("С помощью побитовой операции ^");
-        System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
         a ^= b;
         b ^= a;
         a ^= b;
@@ -118,16 +117,16 @@ public class VariablesTheme {
 
         System.out.println("\n7. ВЫВОД В КОНСОЛЬ ASCII-АРТ ДЮКА");
         char slash = '/';
-        char verticalBar = '\\';
+        char backslash = '\\';
         char underscore = '_';
         char leftParenthesis = '(';
         char rightParenthesis = ')';
-        System.out.println("    " + slash + verticalBar +
-                "\n   " + slash + "  " + verticalBar +
-                "\n  " + slash + underscore + leftParenthesis + " " + rightParenthesis + verticalBar +
-                "\n " + slash + "      " + verticalBar +
+        System.out.println("    " + slash + backslash +
+                "\n   " + slash + "  " + backslash +
+                "\n  " + slash + underscore + leftParenthesis + " " + rightParenthesis + backslash +
+                "\n " + slash + "      " + backslash +
                 "\n" + slash + underscore + underscore + underscore + underscore +
-                slash + verticalBar + underscore + underscore + verticalBar);
+                slash + backslash + underscore + underscore + backslash);
 
         System.out.println("\n8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА");
         int originalNumber = 123;
@@ -157,11 +156,9 @@ public class VariablesTheme {
         BigDecimal basePrice2 = penPrice2.add(bookPrice2);
         basePrice2 = basePrice2.setScale(2, RoundingMode.DOWN); 
         System.out.println("Общая стоимость товаров без скидки = " + basePrice2);
-        BigDecimal totalDiscount2 = basePrice2.multiply(discount2);
-        totalDiscount2 = totalDiscount2.setScale(2, RoundingMode.DOWN);
+        BigDecimal totalDiscount2 = (basePrice2.multiply(discount2)).setScale(2, RoundingMode.DOWN);
         System.out.println("Общая сумма скидки = " + totalDiscount2);
-        BigDecimal totalDiscountPrice2 = basePrice2.subtract(totalDiscount2);
-        totalDiscountPrice2 = totalDiscountPrice2.setScale(2, RoundingMode.DOWN);
+        BigDecimal totalDiscountPrice2 = (basePrice2.subtract(totalDiscount2)).setScale(2, RoundingMode.DOWN);
         System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice2);
     }
 }
