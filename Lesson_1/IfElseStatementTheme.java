@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class IfElseStatementTheme {
     public static void main(String[] args) {
         System.out.println("1. ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA");
@@ -164,6 +167,21 @@ public class IfElseStatementTheme {
             System.out.println("Прибыль за год: " + annualProfit + " руб.");
         } else {
             System.out.println("Прибыль за год: " + annualProfit);
+        }
+
+        System.out.println("\n9. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
+        BigDecimal monthlySales2 = new BigDecimal(13025.233);
+        BigDecimal monthlyPremisesRent2 = new BigDecimal(5123.018);
+        BigDecimal monthlyProductionCost2 = new BigDecimal(9001.729);
+        BigDecimal annualProfit2 = (monthlySales2.subtract(monthlyPremisesRent2.add(monthlyProductionCost2)))
+            .multiply(BigDecimal.valueOf(12));
+        annualProfit2 = annualProfit2.setScale(2, RoundingMode.DOWN);
+        if (annualProfit2.compareTo(BigDecimal.ZERO) > 0) {
+            System.out.println("Прибыль за год: +" + annualProfit2 + " руб.");
+        } else if (annualProfit2.compareTo(BigDecimal.ZERO) < 0) {
+            System.out.println("Прибыль за год: " + annualProfit2 + " руб.");
+        } else {
+            System.out.println("Прибыль за год: " + annualProfit2);
         }
     }
 }
