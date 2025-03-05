@@ -152,7 +152,7 @@ public class IfElseStatementTheme {
         System.out.println("История - " + historyGrade);
         System.out.println("Программирование - " + programmingGrade);
         float avgGrade = ((historyGrade + programmingGrade) / 2);
-        float avgPercent = (((historyFinalGrade + programmingFinalGrade) /2) * 100);
+        float avgPercent = (((historyFinalGrade + programmingFinalGrade) / 2) * 100);
         System.out.println("Средняя оценка по предметам - " + avgGrade);
         System.out.println("Средний процент по предметам - " + avgPercent + "%");
 
@@ -174,8 +174,8 @@ public class IfElseStatementTheme {
         BigDecimal monthlyPremisesRent2 = new BigDecimal(5123.018);
         BigDecimal monthlyProductionCost2 = new BigDecimal(9001.729);
         BigDecimal annualProfit2 = (monthlySales2.subtract(monthlyPremisesRent2.add(monthlyProductionCost2)))
-            .multiply(BigDecimal.valueOf(12));
-        annualProfit2 = annualProfit2.setScale(2, RoundingMode.DOWN);
+                .multiply(BigDecimal.valueOf(12));
+        annualProfit2 = annualProfit2.setScale(2, RoundingMode.HALF_UP);
         if (annualProfit2.compareTo(BigDecimal.ZERO) > 0) {
             System.out.println("Прибыль за год: +" + annualProfit2 + " руб.");
         } else if (annualProfit2.compareTo(BigDecimal.ZERO) < 0) {
