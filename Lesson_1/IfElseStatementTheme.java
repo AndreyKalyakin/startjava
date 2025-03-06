@@ -188,12 +188,12 @@ public class IfElseStatementTheme {
         BigDecimal deposit2 = new BigDecimal(321123.59);
         BigDecimal interestRate2 = BigDecimal.ZERO;
         if (deposit2.compareTo(BigDecimal.valueOf(100000)) < 0) {
-            interestRate2 = new BigDecimal("0.05");
+            interestRate2 = new BigDecimal(0.05);
         } else if (deposit2.compareTo(BigDecimal.valueOf(100000)) >= 0 && 
                 deposit2.compareTo(BigDecimal.valueOf(300000)) <= 0) {
-            interestRate2 = new BigDecimal("0.07");
+            interestRate2 = new BigDecimal(0.07);
         } else if (deposit2.compareTo(BigDecimal.valueOf(300000)) > 0) {
-            interestRate2 = new BigDecimal("0.1");
+            interestRate2 = new BigDecimal(0.1);
         }
         deposit2 = deposit2.setScale(2, RoundingMode.HALF_UP);
         System.out.println("Сумма вклада: " + deposit2 + " руб.");
