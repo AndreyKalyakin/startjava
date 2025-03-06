@@ -83,25 +83,25 @@ public class VariablesTheme {
         System.out.println("\n5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ");
         int a = 2;
         int b = 5;
+        System.out.println("Исходные значения: а = " + a + ", b = " + b);
+
+        System.out.println("a. С помощью третьей переменной");
         int tmp = a;
-        System.out.println("Исходные значения до обмена: а = " + a + ", b = " + b);
-
-        System.out.println("С помощью третьей переменной");
-        b = tmp;
         a = b;
-        System.out.println("Значения после обмена: a = " + a + ", b = " + b);
+        b = tmp;
+        System.out.println("После перестановки: a = " + a + ", b = " + b);
 
-        System.out.println("С помощью арифметических операций");
+        System.out.println("\nb. С помощью арифметических операций");
         a += b;
         b = a - b;
         a -= b;
-        System.out.println("Значения после обмена: a = " + a + ", b = " + b);
+        System.out.println("После перестановки: a = " + a + ", b = " + b);
 
-        System.out.println("С помощью побитовой операции ^");
+        System.out.println("\nc. С помощью побитовой операции ^");
         a ^= b;
         b ^= a;
         a ^= b;
-        System.out.println("Значения после обмена: a = " + a + ", b = " + b);
+        System.out.println("После перестановки: a = " + a + ", b = " + b);
 
         System.out.println("\n6. ВЫВОД СИМВОЛОВ И ИХ КОДОВ");
         char dollar = '$';
@@ -155,10 +155,10 @@ public class VariablesTheme {
         BigDecimal discount2 = new BigDecimal(0.11);
         BigDecimal basePrice2 = penPrice2.add(bookPrice2);
         basePrice2 = basePrice2.setScale(2, RoundingMode.DOWN); 
-        System.out.println("Общая стоимость товаров без скидки = " + basePrice2);
         BigDecimal totalDiscount2 = (basePrice2.multiply(discount2)).setScale(2, RoundingMode.DOWN);
-        System.out.println("Общая сумма скидки = " + totalDiscount2);
         BigDecimal totalDiscountPrice2 = (basePrice2.subtract(totalDiscount2)).setScale(2, RoundingMode.DOWN);
+        System.out.println("Общая стоимость товаров без скидки = " + basePrice2);
+        System.out.println("Общая сумма скидки = " + totalDiscount2);
         System.out.println("Общая стоимость товаров со скидкой = " + totalDiscountPrice2);
     }
 }
