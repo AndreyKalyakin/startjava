@@ -47,18 +47,20 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. ПРОВЕРКА ЧИСЛА");
         int number = -11;
-        if (number % 2 == 0) {
-            System.out.print(number + " является чётным и");
-        } else {
-            System.out.print(number + " является нечётным и");
-        }
-        
-        if (number > 0) {
-            System.out.println(" положительным");
-        } else if (number < 0) {
-            System.out.println(" отрицательным");
-        } else {
+        if (number == 0) {
             System.out.println("Число является " + number);
+        } else {
+            System.out.print(number + " является ");
+            if (number % 2 == 0) {
+                System.out.print("чётным и");
+            } else {
+                System.out.print("нечётным и");
+            }
+            if (number > 0) {
+                System.out.println(" положительным");
+            } else {
+                System.out.println(" отрицательным");
+            }
         }
 
         System.out.println("\n4. ПОИСК ОДИНАКОВЫХ ЦИФР В ЧИСЛАХ");
@@ -118,26 +120,22 @@ public class IfElseStatementTheme {
 
         System.out.println("\n7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
         float historyPercent = 0.59f;
-        int historyGrade;
+        int historyGrade = 2;
         if (historyPercent > 0.91) {
             historyGrade = 5;
         } else if (historyPercent > 0.73) {
             historyGrade = 4;
         } else if (historyPercent > 0.6) {
             historyGrade = 3;
-        } else {
-            historyGrade = 2;
         } 
         float programmingPercent = 0.92f;
-        int programmingGrade;
+        int programmingGrade = 2;
         if (programmingPercent > 0.91) {
             programmingGrade = 5;
         } else if (programmingPercent > 0.73) {
             programmingGrade = 4;
         } else if (programmingPercent > 0.6) {
             programmingGrade = 3;
-        } else {
-            programmingGrade = 2;
         }
         float avgGrade = ((historyGrade + programmingGrade) / 2.0f);
         float avgPercent = (((historyPercent + programmingPercent) / 2.0f) * 100);
@@ -153,7 +151,7 @@ public class IfElseStatementTheme {
         float annualProfit = ((monthlySales - (monthlyPremisesRent + monthlyProductionCost)) * 12);
         if (annualProfit > 0) {
             System.out.println("Прибыль за год: +" + annualProfit + " руб.");
-        } else if (annualProfit < 0) {
+        } else {
             System.out.println("Прибыль за год: " + annualProfit + " руб.");
         }
 
@@ -161,9 +159,10 @@ public class IfElseStatementTheme {
         BigDecimal monthlySales2 = new BigDecimal("13025.233");
         BigDecimal monthlyPremisesRent2 = new BigDecimal("5123.018");
         BigDecimal monthlyProductionCost2 = new BigDecimal("9001.729");
-        BigDecimal annualProfit2 = (monthlySales2.subtract(monthlyPremisesRent2.add(monthlyProductionCost2)))
-                .multiply(BigDecimal.valueOf(12));
-        annualProfit2 = annualProfit2.setScale(2, RoundingMode.HALF_UP);
+        BigDecimal annualProfit2 = monthlySales2.subtract(monthlyPremisesRent2)
+                .subtract(monthlyProductionCost2)
+                .multiply(BigDecimal.valueOf(12))
+                .setScale(2, RoundingMode.HALF_UP);
         if (annualProfit2.compareTo(BigDecimal.ZERO) > 0) {
             System.out.println("Прибыль за год: +" + annualProfit2 + " руб.");
         } else if (annualProfit2.compareTo(BigDecimal.ZERO) < 0) {
