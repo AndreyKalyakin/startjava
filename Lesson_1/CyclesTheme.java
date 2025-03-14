@@ -38,20 +38,20 @@ public class CyclesTheme {
         int sum = 0;
         System.out.print("Цифры числа " + num1 + ": ");
         while (num1 > 0) {
-            int reversNumber = num1 % 10;
-            System.out.print(reversNumber);
-            sum += reversNumber;
+            int remainder = num1 % 10;
+            System.out.print(remainder);
+            sum += remainder;
             num1 /= 10;
         }
         System.out.println("\nСумма цифр: " + sum);
 
         System.out.println("\n4. ВЫВОД ЧИСЕЛ В НЕСКОЛЬКО СТРОК");
-        num1 = 1;
-        num2 = 30;
+        rangeStart = 1;
+        rangeEnd = 24;
         int charsPerLine = 5;
         int count = 0;
-        System.out.print("Нечётные числа из полуинтервала [" + num1 + ", " + num2 + "): \n");
-        for (int i = num1; i < num2; i++) {
+        System.out.print("Нечётные числа из полуинтервала [" + rangeStart + ", " + rangeEnd + "): \n");
+        for (int i = rangeStart; i < rangeEnd; i++) {
             if (i % 2 != 0) {
                 System.out.printf("%3d", i);
                 count++;
@@ -66,7 +66,7 @@ public class CyclesTheme {
             }
         }
 
-        System.out.println("\n5. ПРОВЕРКА КОЛИЧЕСТВА ДВОЕК ЧИСЛА НА ЧЕТНОСТЬ/НЕЧЕТНОСТЬ");
+        System.out.println("\n\n5. ПРОВЕРКА КОЛИЧЕСТВА ДВОЕК ЧИСЛА НА ЧЕТНОСТЬ/НЕЧЕТНОСТЬ");
         num1 = 3242592;
         count = 0;
         System.out.print("В " + num1);
@@ -111,9 +111,9 @@ public class CyclesTheme {
         row = 1;
         do {
             int chars;
-            if (row <= size) {       // Верхняя половина треугольника
+            if (row <= size) {
                 chars = row;
-            } else {                 // Нижняя половина треугольника
+            } else {
                 chars = 2 * size - row;
             }
             int charCounter = 0;
@@ -141,13 +141,13 @@ public class CyclesTheme {
         System.out.println("\n8. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО ПАЛИНДРОМОМ");
         int originalNumber = 1234321;
         int currNumber = originalNumber;
-        int revercedNumber = 0;
+        int reversedNumber = 0;
         while (originalNumber > 0) {
-            num2 = originalNumber % 10;
-            revercedNumber = revercedNumber * 10 + num2;
+            int remainder = originalNumber % 10;
+            reversedNumber = reversedNumber * 10 + remainder;
             originalNumber /= 10;
         }
-        if (currNumber == revercedNumber) {
+        if (currNumber == reversedNumber) {
             System.out.println("Число " + currNumber + " - палиндром");
         } else {
             System.out.println("Число " + currNumber + " - не палиндром");
