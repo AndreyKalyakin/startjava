@@ -13,10 +13,10 @@ public class WolfTest {
         System.out.println("Возраст = " + wolfOne.getAge() + " лет");
         System.out.println("Окрас = " + wolfOne.getColor());
 
-        /* wolfOne.walk();
+        wolfOne.walk();
         wolfOne.sit();
         wolfOne.run();
         wolfOne.howl();
-        wolfOne.hunt();*/
+        wolfOne.hunt();
     }
 }
