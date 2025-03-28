@@ -8,16 +8,19 @@ public class Jaeger {
     private int armor;
     private int speed;
 
-    public void move() {
-        System.out.println(modelName + " идёт");
+    public Jaeger() {
     }
 
-    public void weapon() {
-        System.out.println(modelName + " атакует");
-    }
-
-    public void powerMove() {
-        System.out.println(modelName + " использует особую атаку");
+    public Jaeger(String modelName, String mark, String origin, float weight, 
+            float height, int strength, int armor, int speed) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.origin = origin;
+        this.weight = weight;
+        this.height = height;
+        this.strength = strength;
+        this.armor = armor;
+        this.speed = speed;
     }
 
     public String getModelName() {
@@ -84,18 +87,15 @@ public class Jaeger {
         this.speed = speed;
     }
 
-    public Jaeger() {
+    public void move() {
+        System.out.println(modelName + " идёт");
     }
 
-    public Jaeger(String modelName, String mark, String origin, float weight, 
-            float height, int strength, int armor, int speed) {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.origin = origin;
-        this.weight = weight;
-        this.height = height;
-        this.strength = strength;
-        this.armor = armor;
-        this.speed = speed;
+    public void weapon() {
+        System.out.println(modelName + " атакует");
+    }
+
+    public void powerMove() {
+        System.out.println(modelName + " использует особую атаку");
     }
 }

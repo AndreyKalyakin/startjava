@@ -1,33 +1,32 @@
 import java.util.Scanner;
 
-public class CalculatTest {
+public class CalculatorTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Calculator calculatorOne = new Calculator();
-        String continueCalculation;
+        String repeat;
 
         do {
             System.out.print("Введите первое число: ");
-            int num1Scan = scan.nextInt();
+            int num1 = scan.nextInt();
             scan.nextLine();
-            calculatorOne.setNum1(num1Scan);
+            calculatorOne.setNum1(num1);
 
             System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
             char sign = scan.nextLine().charAt(0);
             calculatorOne.setOperator(sign);
 
             System.out.print("Введите второе число: ");
-            int num2Scan = scan.nextInt();
-            calculatorOne.setNum2(num2Scan);
+            int num2 = scan.nextInt();
+            calculatorOne.setNum2(num2);
 
             calculatorOne.calculate();
 
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-                continueCalculation = scan.next();
-            } while (!continueCalculation.equalsIgnoreCase("yes") && 
-                !continueCalculation.equalsIgnoreCase("no"));
-        } while (continueCalculation.equalsIgnoreCase("yes"));
+                repeat = scan.next().toLowerCase();
+            } while (!repeat.equals("yes") && !repeat.equals("no"));
+        } while (repeat.equals("yes"));
         scan.close();
     }
 }

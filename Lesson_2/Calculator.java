@@ -2,7 +2,6 @@ public class Calculator {
     private int num1;
     private int num2;
     private char operator;
-    private double result;
 
     public int getNum1() {
         return num1;
@@ -29,6 +28,7 @@ public class Calculator {
     }
 
     public void calculate() {
+        double result;
         switch (operator) {
             case '+':
                 result = num1 + num2;
@@ -40,34 +40,30 @@ public class Calculator {
                 result = num1 * num2;
                 break;
             case '/':
-                if (num1 != 0 && num2 != 0) {
-                    result = num1 / num2;
-                } else {
+                if (num2 == 0) {
                     System.out.println("Ошибка: деление на ноль запрещено");
                     return;
                 }
+                result = num1 / num2;
                 break;
             case '^':
-                if (num2 >= 0) {
-                    result = 1;
-                    for (int i = 0; i < num2; i++) {
-                        result *= num1;
-                    }
-                } else {
-                    result = 1;
-                    for (int i = 0; i < -num2; i++) {
-                        result *= num1;
-                    }
+                result = 1;
+                if (num2 < 0) {
+                    num2 = -num2;
+                }
+                for (int i = 0; i < num2; i++) {
+                    result *= num1;
+                }
+                if (num2 < 0) {
                     result = 1 / result;
                 }
                 break;
             case '%':
-                if (num1 != 0 && num2 != 0) {
-                    result = num1 % num2;
-                } else {
+                if (num2 == 0) {
                     System.out.println("Ошибка: деление на ноль запрещено");
                     return;
                 }
+                result = num1 % num2;
                 break;
             default:
                 System.out.println("Ошибка: операция '" + operator + "' не поддерживается");
