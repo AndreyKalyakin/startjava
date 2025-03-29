@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-        System.setProperty("console.encoding", "UTF-8");
         Scanner scanner = new Scanner(System.in);
         String playAgain;
 
