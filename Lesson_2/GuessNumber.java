@@ -19,29 +19,39 @@ public class GuessNumber {
         Player currentPlayer = player1;
 
         while (!guessed) {
-            System.out.print(currentPlayer.getName() + ", введите число: ");
-            int guess = scanner.nextInt();
-            if (guess < 1 || guess > 100) {
-                System.out.println("Число должно быть в диапазоне от 1 до 100.");
-                continue;
-            }
-
+            int guess = getPlayerGuess(currentPlayer);
             currentPlayer.setNumber(guess);
 
-            if (guess == secretNumber) {
-                System.out.println(currentPlayer.getName() + " угадал число! Победа!");
+            if (isGuessCorrect(currentPlayer, guess)) {
                 guessed = true;
-            } else if (guess < secretNumber) {
-                System.out.println(guess + " меньше того, что загадал компьютер");
             } else {
-                System.out.println(guess + " больше того, что загадал компьютер");
-            }
-
-            if (currentPlayer == player1) {
-                currentPlayer = player2;
-            } else {
-                currentPlayer = player1;
+                currentPlayer = switchPlayer(currentPlayer);
             }
         }
+    }
+
+    private int getPlayerGuess(Player player) {
+        System.out.print(player.getName() + ", введите число: ");
+        int guess = scanner.nextInt();
+        while (guess < 1 || guess > 100) {
+            System.out.println("Число должно быть в диапазоне от 1 до 100.");
+            System.out.print(player.getName() + ", введите число: ");
+            guess = scanner.nextInt();
+        }
+        return guess;
+    }
+
+    private boolean isGuessCorrect(Player player, int guess) {
+        if (guess == secretNumber) {
+            System.out.println(player.getName() + " угадал число! Победа!");
+            return true;
+        }
+        System.out.println(guess + (guess < secretNumber ? " меньше " : " больше ") + 
+                "того, что загадал компьютер");
+        return false;
+    }
+
+    private Player switchPlayer(Player currentPlayer) {
+        return currentPlayer == player1 ? player2 : player1;
     }
 }

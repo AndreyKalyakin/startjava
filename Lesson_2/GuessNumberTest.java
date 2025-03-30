@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String playAgain;
+        String userResponse;
 
         System.out.print("Введите имя первого игрока: ");
         Player player1 = new Player(scanner.next());
@@ -15,9 +15,9 @@ public class GuessNumberTest {
             game.start();
             do {
                 System.out.print("Хотите продолжить игру? [yes/no]: ");
-                playAgain = scanner.next().toLowerCase();
-            } while (!playAgain.equals("yes") && !playAgain.equals("no"));
-        } while (playAgain.equals("yes"));
+                userResponse = scanner.next().toLowerCase();
+            } while (!userResponse.equals("yes") && !userResponse.equals("no"));
+        } while (userResponse.equals("yes"));
 
         System.out.println("Спасибо за игру!");
         scanner.close();
