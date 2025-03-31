@@ -2,6 +2,7 @@ public class Calculator {
     private int num1;
     private int num2;
     private char operator;
+    private double result;
 
     public int getNum1() {
         return num1;
@@ -28,7 +29,6 @@ public class Calculator {
     }
 
     public void calculate() {
-        double result;
         switch (operator) {
             case '+':
                 result = num1 + num2;
