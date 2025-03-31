@@ -1,17 +1,17 @@
 public class MethodNaming {
     public static void main(String[] args) {
         System.out.println("1. HЕ BOOLEAN-МЕТОДЫ");
-        invokeNonBooleanMethods();
+        execNonBooleanMethods();
 
         System.out.println("\n2. BOOLEAN-МЕТОДЫ");
-        invokeBooleanMethods();
+        execBooleanMethods();
     }
 
-    private static void invokeNonBooleanMethods() {
+    private static void execNonBooleanMethods() {
         NonBooleanMethods nonBoolean = new NonBooleanMethods();
         nonBoolean.findLongestWord();
         nonBoolean.selectMenuItem();
-        nonBoolean.AvgGrades();
+        nonBoolean.avgGrades();
         nonBoolean.countUniqueWords();
         nonBoolean.showErrorMessege();
         nonBoolean.syncWithCloud();
@@ -25,7 +25,7 @@ public class MethodNaming {
         nonBoolean.findBookByAuthor();
     }
 
-    private static void invokeBooleanMethods() {
+    private static void execBooleanMethods() {
         BooleanMethods booleanMethods = new BooleanMethods();
         System.out.println(booleanMethods.doesContinue());
         System.out.println(booleanMethods.hasUniqueDigit());

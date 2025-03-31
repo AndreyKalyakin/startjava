@@ -19,10 +19,10 @@ public class GuessNumber {
         Player currentPlayer = player1;
 
         while (!guessed) {
-            int guess = getPlayerGuess(currentPlayer);
+            int guess = inputGuess(currentPlayer);
             currentPlayer.setNumber(guess);
 
-            if (isGuessCorrect(currentPlayer, guess)) {
+            if (isGuessed(currentPlayer, guess)) {
                 guessed = true;
             } else {
                 currentPlayer = switchPlayer(currentPlayer);
@@ -30,7 +30,7 @@ public class GuessNumber {
         }
     }
 
-    private int getPlayerGuess(Player player) {
+    private int inputGuess(Player player) {
         System.out.print(player.getName() + ", введите число: ");
         int guess = scanner.nextInt();
         while (guess < 1 || guess > 100) {
@@ -41,7 +41,7 @@ public class GuessNumber {
         return guess;
     }
 
-    private boolean isGuessCorrect(Player player, int guess) {
+    private boolean isGuessed(Player player, int guess) {
         if (guess == secretNumber) {
             System.out.println(player.getName() + " угадал число! Победа!");
             return true;
