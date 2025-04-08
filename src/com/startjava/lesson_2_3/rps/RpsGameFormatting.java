@@ -5,6 +5,10 @@ import java.util.Scanner;
 
 // Игра Камень-Ножницы-Бумага
 public class RpsGameFormatting {
+    private static final String ROCK = "✊";
+    private static final String SCISSORS = "✌️";
+    private static final String PAPER = "✋";
+
     public static void main(String[] args) throws InterruptedException {
         Random r = new Random();
         Scanner console = new Scanner(System.in);
@@ -25,17 +29,13 @@ public class RpsGameFormatting {
         console.close();
     }
 
-    private static final String ROCK = "✊";
-    private static final String SCISSORS = "✌️";
-    private static final String PAPER = "✋";
-
     private static String inputName(Scanner console) {
         System.out.print("Введите имя игрока: ");
         return console.nextLine();
     }
 
-    private static int generatePosition(String name1, Random r) {
-        System.out.println("Ход " + name1 + ": ");
+    private static int generatePosition(String name, Random r) {
+        System.out.println("Ход " + name + ": ");
         return r.nextInt(1, 100);
     }
 
@@ -67,14 +67,17 @@ public class RpsGameFormatting {
             return;
         }
 
-        boolean isEqualName1 = sign1.equals(ROCK) && sign2.equals(SCISSORS) ||
-                sign1.equals(SCISSORS) && sign2.equals(PAPER) ||
-                sign1.equals(PAPER) && sign2.equals(ROCK);
-
-        if (isEqualName1) {
+        if (isFirstPlayerWin(sign1, sign2)) {
             System.out.println("\nПобедил - " + name1);
-        } else {
-            System.out.println("\nПобедил - " + name2);
+            return;
         }
+
+        System.out.println("\nПобедил - " + name2);
+    }
+
+    private static boolean isFirstPlayerWin(String s1, String s2) {
+        return s1.equals(ROCK) && s2.equals(SCISSORS) ||
+               s1.equals(SCISSORS) && s2.equals(PAPER) ||
+               s1.equals(PAPER) && s2.equals(ROCK);
     }
 }
