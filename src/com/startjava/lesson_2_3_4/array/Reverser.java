@@ -30,7 +30,7 @@ public class Reverser {
         return values;
     }
 
-    public static void print(int[] values) {
+    private static void print(int[] values) {
         if (values == null) {
             System.out.println("Ошибка: передан null вместо массива. Ожидался массив с целыми числами.\n");
             return;
