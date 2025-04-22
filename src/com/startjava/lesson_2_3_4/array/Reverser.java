@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Reverser {
     public static void main(String[] args) {
         int[] arr1 = new int[]{};
-        int[] rev1 = reverse(Arrays.copyOf(arr1, arr1.length));
+        int[] rev1 = reverse(arr1);
         print(arr1, rev1);
 
         int[] arr2 = null;
@@ -13,11 +13,11 @@ public class Reverser {
         print(arr2, rev2);
 
         int[] arr3 = new int[]{6, 8, 9, 1};
-        int[] rev3 = reverse(Arrays.copyOf(arr3, arr3.length));
+        int[] rev3 = reverse(arr3);
         print(arr3, rev3);
 
         int[] arr4 = new int[]{13, 8, 5, 3, 2, 1, 1};
-        int[] rev4 = reverse(Arrays.copyOf(arr4, arr4.length));
+        int[] rev4 = reverse(arr4);
         print(arr4, rev4);
     }
 
@@ -25,13 +25,12 @@ public class Reverser {
         if (values == null || values.length == 0) {
             return values;
         }
+        int[] reversed = new int[values.length];
         int length = values.length;
-        for (int i = 0; i < length / 2; i++) {
-            int temp = values[i];
-            values[i] = values[--length];
-            values[length] = temp;
+        for (int i = 0; i < values.length; i++) {
+            reversed[i] = values[--length];
         }
-        return values;
+        return reversed;
     }
 
     private static void print(int[] original, int[] reversed) {
