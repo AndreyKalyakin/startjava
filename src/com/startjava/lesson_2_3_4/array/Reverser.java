@@ -4,17 +4,21 @@ import java.util.Arrays;
 
 public class Reverser {
     public static void main(String[] args) {
-        print(new int[]{});
-        reverse(new int[]{});
+        int[] arr1 = new int[]{};
+        int[] rev1 = reverse(Arrays.copyOf(arr1, arr1.length));
+        print(arr1, rev1);
 
-        print(null);
-        reverse(null);
+        int[] arr2 = null;
+        int[] rev2 = reverse(arr2);
+        print(arr2, rev2);
 
-        print(new int[]{6, 8, 9, 1});
-        reverse(new int[]{6, 8, 9, 1});
+        int[] arr3 = new int[]{6, 8, 9, 1};
+        int[] rev3 = reverse(Arrays.copyOf(arr3, arr3.length));
+        print(arr3, rev3);
 
-        print(new int[]{13, 8, 5, 3, 2, 1, 1});
-        reverse(new int[]{13, 8, 5, 3, 2, 1, 1});
+        int[] arr4 = new int[]{13, 8, 5, 3, 2, 1, 1};
+        int[] rev4 = reverse(Arrays.copyOf(arr4, arr4.length));
+        print(arr4, rev4);
     }
 
     private static int[] reverse(int[] values) {
@@ -30,16 +34,16 @@ public class Reverser {
         return values;
     }
 
-    private static void print(int[] values) {
-        if (values == null) {
+    private static void print(int[] original, int[] reversed) {
+        if (original == null) {
             System.out.println("Ошибка: передан null вместо массива. Ожидался массив с целыми числами.\n");
             return;
         }
-        if (values.length == 0) {
+        if (original.length == 0) {
             System.out.println("Ошибка: массив нулевой длины. Ожидался непустой массив.\n");
             return;
         }
-        System.out.println("   До реверса: " + Arrays.toString(values));
-        System.out.println("После реверса: " + Arrays.toString(reverse(values)) + "\n");
+        System.out.println("   До реверса: " + Arrays.toString(original));
+        System.out.println("После реверса: " + Arrays.toString(reversed) + "\n");
     }
 }
