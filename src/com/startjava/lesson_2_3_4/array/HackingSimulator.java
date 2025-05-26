@@ -3,19 +3,14 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Random;
 
 public class HackingSimulator {
-    private static final String COLOR_GREEN = "\u001B[32m";
-    private static final String COLOR_RED = "\u001B[31m";
-    private static final String COLOR_RESET = "\u001B[0m";
+    private static final String GREEN = "\u001B[32m";
+    private static final String RED = "\u001B[31m";
+    private static final String RESET = "\u001B[0m";
 
     public static void main(String[] args) {
         runLoadingAnimation();
         int accessCode = generateRandomCode();
-        System.out.print("\rHacking: ");
-        if (accessCode > 70) {
-            System.out.println(COLOR_GREEN + "Access Granted!" + COLOR_RESET);
-        } else {
-            System.out.println(COLOR_RED + "Access Denied!" + COLOR_RESET);
-        }
+        printResult(accessCode);
     }
 
     private static int generateRandomCode() {
@@ -36,6 +31,15 @@ public class HackingSimulator {
             } catch (InterruptedException e) {
                 return;
             }
+        }
+    }
+
+    private static void printResult(int accessCode) {
+        System.out.print("\rHacking: ");
+        if (accessCode > 70) {
+            System.out.println(GREEN + "Access Granted!" + RESET);
+        } else {
+            System.out.println(RED + "Access Denied!" + RESET);
         }
     }
 }
