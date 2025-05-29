@@ -8,9 +8,25 @@ public class HackingSimulator {
     private static final String RESET = "\u001B[0m";
 
     public static void main(String[] args) {
-        runLoadingAnimation();
-        int accessCode = generateRandomCode();
+        int accessCode = hack();
         printResult(accessCode);
+    }
+
+    private static int hack() {
+        char[] spins = {'-', '\\', '|', '/'};
+        int fullSpins = 4;
+        int totalFrames = spins.length * fullSpins;
+        int delayMillis = 215;
+
+        for (int i = 0; i < totalFrames; i++) {
+            System.out.print("\rHacking: " + spins[i % spins.length]);
+            try {
+                Thread.sleep(delayMillis);
+            } catch (InterruptedException e) {
+                return 0;
+            }
+        }
+        return generateRandomCode();
     }
 
     private static int generateRandomCode() {
@@ -18,28 +34,8 @@ public class HackingSimulator {
         return random.nextInt(100);
     }
 
-    private static void runLoadingAnimation() {
-        char[] spinnerChars = {'-', '\\', '|', '/'};
-        int fullSpins = 4;
-        int totalFrames = spinnerChars.length * fullSpins;
-        int delayMillis = 215;
-
-        for (int i = 0; i < totalFrames; i++) {
-            System.out.print("\rHacking: " + spinnerChars[i % spinnerChars.length]);
-            try {
-                Thread.sleep(delayMillis);
-            } catch (InterruptedException e) {
-                return;
-            }
-        }
-    }
-
     private static void printResult(int accessCode) {
-        System.out.print("\rHacking: ");
-        if (accessCode > 70) {
-            System.out.println(GREEN + "Access Granted!" + RESET);
-        } else {
-            System.out.println(RED + "Access Denied!" + RESET);
-        }
+        System.out.println("\rHacking: " + (accessCode > 70 ? GREEN + "Access Granted!" + RESET
+                : RED + "Access Denied!" + RESET));
     }
 }

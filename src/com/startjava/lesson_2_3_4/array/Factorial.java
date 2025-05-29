@@ -2,64 +2,56 @@ package com.startjava.lesson_2_3_4.array;
 
 public class Factorial {
     public static void main(String[] args) {
-        System.out.println("Массив: массив нулевой длины");
-        int[] values1 = {};
-        String[] expression1 = calculateFactorials(values1);
-        displayFactorials(expression1);
+        int[] numbers = {};
+        displayFactorials(calc(numbers));
 
-        System.out.println("Массив: null");
-        int[] values2 = null;
-        String[] expression2 = calculateFactorials(values2);
-        displayFactorials(expression2);
+        numbers = null;
+        displayFactorials(calc(numbers));
 
-        System.out.println("Массив: {8, 0, 9}");
-        int[] values3 = {8, 0, 9};
-        String[] expression3 = calculateFactorials(values3);
-        displayFactorials(expression3);
+        numbers = new int[]{8, 0, 9};
+        displayFactorials(calc(numbers));
 
-        System.out.println("Массив: {-3, 1, 7, 13}");
-        int[] values4 = {-3, 1, 7, 13};
-        String[] expression4 = calculateFactorials(values4);
-        displayFactorials(expression4);
+        numbers = new int[]{-3, 1, 7, 13};
+        displayFactorials(calc(numbers));
 
-        System.out.println("Массив: {-22, -0}");
-        int[] values5 = {-22, -0};
-        String[] expression5 = calculateFactorials(values5);
-        displayFactorials(expression5);
+        numbers = new int[]{-22, -0};
+        displayFactorials(calc(numbers));
     }
 
-    public static String[] calculateFactorials(int... values) {
+    public static String[] calc(int... values) {
         if (values == null) {
-            return new String[] {"Входной массив: null"};
+            System.out.println("Входной массив: null");
+            return new String[0];
         }
 
         if (values.length == 0) {
-            return new String[] {"Входной массив: пустой"};
+            System.out.println("Входной массив: пустой");
+            return new String[0];
         }
 
-        String[] result = new String[values.length];
+        String[] expressions = new String[values.length];
         for (int i = 0; i < values.length; i++) {
-            result[i] = formatFactorialOutput(values[i]);
+            expressions[i] = formatExpressions(values[i]);
         }
-        return result;
+        return expressions;
     }
 
-    private static String formatFactorialOutput(int n) {
+    private static String formatExpressions(int n) {
         if (n < 0) {
             return "Ошибка: факториал " + n + "! не определен. Допустимы только неотрицательные значения.";
         }
         long result = 1;
-        String expression = n + "! = ";
+        StringBuilder expression = new StringBuilder(n + "! = ");
         if (n == 0 || n == 1) {
-            expression += "1";
+            expression.append("1");
         } else {
             for (int i = 1; i <= n; i++) {
                 result *= i;
-                expression += i + (i != n ? " * " : "");
+                expression.append(i).append(i != n ? " * " : "");
             }
         }
-        expression += " = " + result;
-        return expression;
+        expression.append(" = ").append(result);
+        return expression.toString();
     }
 
     private static void displayFactorials(String[] expressions) {

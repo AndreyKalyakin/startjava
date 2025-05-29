@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class BankTransactionReverser {
     public static void main() {
-        int[] arr1 = {};
-        int[] rev1 = reverseTransactions(arr1);
-        printTransactions(arr1, rev1);
+        int[] original = {};
+        int[] reversed = reverseTransactions(original);
+        printTransactions(original, reversed);
 
-        int[] arr2 = null;
-        int[] rev2 = reverseTransactions(arr2);
-        printTransactions(arr2, rev2);
+        original = null;
+        reversed = reverseTransactions(original);
+        printTransactions(original, reversed);
 
-        int[] arr3 = {6, 8, 9, 1};
-        int[] rev3 = reverseTransactions(arr3);
-        printTransactions(arr3, rev3);
+        original = new int[]{6, 8, 9, 1};
+        reversed = reverseTransactions(original);
+        printTransactions(original, reversed);
 
-        int[] arr4 = {13, 8, 5, 3, 2, 1, 1};
-        int[] rev4 = reverseTransactions(arr4);
-        printTransactions(arr4, rev4);
+        original = new int[]{13, 8, 5, 3, 2, 1, 1};
+        reversed = reverseTransactions(original);
+        printTransactions(original, reversed);
     }
 
     private static int[] reverseTransactions(int[] original) {
