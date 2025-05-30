@@ -8,20 +8,18 @@ public class HackingSimulator {
     private static final String RESET = "\u001B[0m";
 
     public static void main(String[] args) {
-        int accessCode = hack();
-        printResult(accessCode);
+        printHackResult(hack());
     }
 
     private static int hack() {
         char[] spins = {'-', '\\', '|', '/'};
         int fullSpins = 4;
         int totalFrames = spins.length * fullSpins;
-        int delayMillis = 215;
 
         for (int i = 0; i < totalFrames; i++) {
             System.out.print("\rHacking: " + spins[i % spins.length]);
             try {
-                Thread.sleep(delayMillis);
+                Thread.sleep(215);
             } catch (InterruptedException e) {
                 return 0;
             }
@@ -34,8 +32,10 @@ public class HackingSimulator {
         return random.nextInt(100);
     }
 
-    private static void printResult(int accessCode) {
-        System.out.println("\rHacking: " + (accessCode > 70 ? GREEN + "Access Granted!" + RESET
-                : RED + "Access Denied!" + RESET));
+    private static void printHackResult(int accessCode) {
+        System.out.println("\rHacking: " + ((accessCode > 70
+                ? GREEN + "Access Granted!"
+                : RED + "Access Denied!")
+                + RESET));
     }
 }
