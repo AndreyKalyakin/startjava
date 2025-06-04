@@ -14,14 +14,14 @@ public class ArrayElementRemover {
     private static ProcessEntry[] processIndexes(int[] indexes) {
         Random random = new Random();
         ProcessEntry[] entries = new ProcessEntry[indexes.length];
-        for (int i = 0; i < indexes.length; i++) {
-            int index = indexes[i];
+        int i = 0;
+        for (int index : indexes) {
             float[] original = new float[15];
             for (int j = 0; j < 15; j++) {
                 original[j] = random.nextFloat();
             }
             ProcessResult result = computeResult(original, index);
-            entries[i] = new ProcessEntry(original, index, result);
+            entries[i++] = new ProcessEntry(original, index, result);
         }
         return entries;
     }
